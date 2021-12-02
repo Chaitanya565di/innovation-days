@@ -32,7 +32,7 @@ self.addEventListener('paymentrequest', async e => {
   try {
     // Open the window and preserve the client
     const merchantName = encodeURIComponent(payment_request_event.methodData[0].data.merchantName);
-    client = await e.openWindow('/pay/index.html?merchantName=' + merchantName);
+    client = await e.openWindow('/pay/?merchantName=' + merchantName);
     if (!client) {
       // Reject if the window fails to open
       throw 'Failed to open window.';
