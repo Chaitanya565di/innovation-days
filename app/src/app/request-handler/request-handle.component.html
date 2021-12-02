@@ -30,8 +30,8 @@
       </form>
     </div>
     <div class="bottom">
-      <button mat-flat-button color="warn" class="cancel">Cancel</button>
-      <button mat-flat-button color="primary" class="cancel" [disabled]="!requestHandleForm.valid">Confirm</button>
+      <button mat-flat-button color="warn" class="cancel" (click)="onCancel()">Cancel</button>
+      <button mat-flat-button color="primary" class="cancel" (click)="onPay()" [disabled]="!requestHandleForm.valid">Confirm</button>
     </div>
   </div>
 </div>
