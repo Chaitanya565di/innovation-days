@@ -1,0 +1,6 @@
+{
+    "default_applications": ["http://localhost:8000/manifest.json"],
+    "supported_origins": [
+      "https://paymentrequest-demo.glitch.me/"
+    ]
+  }

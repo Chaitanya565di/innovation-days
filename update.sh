@@ -1,0 +1,1 @@
+aws s3 cp . s3://kbc-future-of-online-payments/ --sse AES256 --recursive --acl public-read-write --exclude ".git/*" --exclude "app/*"
