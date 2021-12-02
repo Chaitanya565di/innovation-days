@@ -7,7 +7,6 @@
 }
 
 .main {
-  width: 960px;
   margin: 0 auto;
 }
 
@@ -64,6 +63,7 @@
 
 .pay-title {
   color: #aca6a0;
+  padding-left: 10px;
 }
 
 .logo-person{
@@ -71,6 +71,7 @@
   height: 50px;
   border: 1px solid #fafbfc;
   border-radius: 10px;
+  padding-left: 10px;
 }
 
 .image{
@@ -79,8 +80,9 @@
 }
 
 .payment-details {
-  width: 94%;
-  float: right;
+  width: 70%;
+  float: left;
+  padding-left: 20px;
 }
 
 .payment-details span {
@@ -96,3 +98,4 @@
   height: 46px;
   border:none;
 }
+
