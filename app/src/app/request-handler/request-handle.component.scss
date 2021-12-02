@@ -1,0 +1,48 @@
+:host {
+  display: block;
+}
+
+.wrapper{
+  width: 100%;
+}
+
+.header{
+  text-align: center;
+}
+
+.content{
+  display: flex;
+  width: 100%;
+}
+
+.left-content{
+  flex-grow: 1;
+  text-align: center;
+}
+
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+.logo {
+  width: 6%;
+}
+
+.bottom {
+  text-align: center;
+}
+
+.cancel{
+  margin-right: 20px;
+  width: 150px;
+}
+
+.cardlogo{
+  width: 2%;
+}

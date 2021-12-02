@@ -1,0 +1,37 @@
+<div class="wrapper">
+  <div class="main">
+    <div class="header">
+      <img src="/pay/assets/icon-512x512.png" class="logo" alt="KBC LOGO"/>
+    </div>
+    <div class="content">
+      <div class="left-content">
+        <p>Total Amount to pay : </p>
+        <p>Merchant to pay : </p>
+      </div>
+      <div class="left-content">
+        <p>{{amount}}, {{currency}}</p>
+        <p>{{merchantName}}</p>
+      </div>
+    </div>
+    <div class="cards">
+      <form [formGroup]="requestHandleForm">
+        <label>List of available cards</label>
+        <mat-radio-group required
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+                         formControlName="selectedCard">
+          <mat-radio-button class="example-radio-button" *ngFor="let card of creditCards" [value]="card.cardNumber">
+            {{card.cardNumber | creditCardPipe}}
+            <span>
+              <img src="/pay/assets/icon-512x512.png" class="cardlogo" alt="KBC LOGO"/>
+            </span>
+          </mat-radio-button>
+        </mat-radio-group>
+      </form>
+    </div>
+    <div class="bottom">
+      <button mat-flat-button color="warn" class="cancel">Cancel</button>
+      <button mat-flat-button color="primary" class="cancel" [disabled]="!requestHandleForm.valid">Confirm</button>
+    </div>
+  </div>
+</div>
