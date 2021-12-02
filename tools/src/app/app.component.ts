@@ -61,8 +61,50 @@ export class AppComponent {
     console.log(assertion);
   }
 
-  public install() {
+  public async install() {
     console.log("install")
+    // Feature detection
+    if ('serviceWorker' in navigator) {
+      // Register a service worker
+      navigator.serviceWorker.register(
+        // A service worker JS file is separate
+        'http://localhost:8000/service-worker.js'
+      );
+      // PaymentManager requires the service worker to be active.
+      // One simple method to activate a service worker is through
+      // a `ready` promise.
+      const registration:any = await navigator.serviceWorker.ready;
+
+            // Feature detection
+      if (!registration.paymentManager) return;
+
+
+      await registration.paymentManager.instruments.set(
+        // Payment instrument key
+        'kbc',
+        // Payment instrument details
+        {
+          // This parameter will be ignored in Chrome
+          name: 'Payment Handler KBC Example',
+          // This parameter will be used to match against
+          // the PaymentRequest.
+          method: 'http://localhost:8000/payment-manifest-local.json'
+        }
+      );
+
+      await registration.paymentManager.instruments.set(
+        // Payment instrument key
+        'WL',
+        // Payment instrument details
+        {
+          // This parameter will be ignored in Chrome
+          name: 'Payment Handler 2 Example',
+          // This parameter will be used to match against
+          // the PaymentRequest.
+          method: 'http://localhost:8000/payment-manifest-local2.json'
+        }
+      );
+    }
   }
 
   public uninstall() {
