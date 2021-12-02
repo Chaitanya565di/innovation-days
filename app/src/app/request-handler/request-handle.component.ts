@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {FormControl, FormGroup, NgForm, Validators} from "@angular/forms";
 
 @Component({
@@ -10,13 +10,15 @@ export class RequestHandleComponent implements OnInit {
   public requestHandleForm: FormGroup;
   public amount: number = 30.23;
   public currency: string = 'Eur';
-  public merchantName: string = "Domino's Pizza";
   public selectedCard: string = '';
   public creditCards = [
     {cardNumber: '123456789009'},
     {cardNumber:'908765432112'},
     {cardNumber: '345678901234'},
   ];
+
+  @Input()
+  public merchant: string = '';
 
   public constructor() {
     this.requestHandleForm = new FormGroup({

@@ -3,10 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import {RequestHandleComponent} from "./request-handler/request-handle.component";
 
 const routes: Routes = [
-  {
-    path: 'request-handle',
-    component: RequestHandleComponent,
-  }
 ];
 
 @NgModule({

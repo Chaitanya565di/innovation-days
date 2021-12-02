@@ -8,7 +8,7 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class AppComponent implements OnInit {
   title = 'app';
-  public merchantName: string = 'WorldLine KBC Shop';
+  public merchantName: string = 'You do know this name is dynamical right?';
 
   constructor(private readonly _route: ActivatedRoute) {
   }
