@@ -1,0 +1,6 @@
+{
+    "default_applications": ["https://kbc-future-of-online-payments.s3.eu-west-1.amazonaws.com/manifest.json"],
+    "supported_origins": [
+      "https://paymentrequest-demo.glitch.me/"
+    ]
+  }
